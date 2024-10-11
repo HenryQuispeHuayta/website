@@ -1,16 +1,23 @@
+---
+import { NavLinks, SiteInfo } from "src/constants";
+
+---
+
 <header>
   <nav>
-    <div class="logo">Mi Sitio</div>
+    <div class="logo">{SiteInfo.TITLE}</div>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" />
     <label for="nav-toggle" class="nav-toggle-label">
       <span></span>
     </label>
     <ul>
-      <li><a href="/">Inicio</a></li>
-      <li><a href="/sobre-mi">Sobre Mí</a></li>
-      <li><a href="/proyectos">Proyectos</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/contacto">Contacto</a></li>
+      {
+        NavLinks.map((link) => (
+          <li>
+            <a href={link.url}>{link.name}</a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>
