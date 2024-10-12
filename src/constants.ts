@@ -15,3 +15,8 @@ export const NavLinks = [
   { name: "Blog", url: "/blog" },
   { name: "Contact", url: "/contact" },
 ];
+
+export const SocialLinks = [
+  { name: "GitHub", url: "https://github.com/HenryQuispeHuayta" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/henry-qh/" },
+];
