@@ -1,0 +1,21 @@
+---
+import type { GetStaticPaths } from "astro";
+import { NavLinks } from "src/constants";
+export const getStaticPaths = (() => {
+  return NavLinks.map((page) => {
+    return {
+      params: {
+        page: page.name.toLowerCase(),
+      },
+      props: {
+        page,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const { name } = page;
+---
+
+{name}
