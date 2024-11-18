@@ -1,6 +1,13 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { NavLinks, SiteInfo } from "src/constants";
 
+const links = NavLinks.map((link) => ({
+  ...link,
+  url: getRelativeLocaleUrl("es", link.url),
+}));
+
+console.log(links);
 ---
 
 <header>
@@ -12,7 +19,7 @@ import { NavLinks, SiteInfo } from "src/constants";
     </label>
     <ul>
       {
-        NavLinks.map((link) => (
+        links.map((link) => (
           <li>
             <a href={link.url}>{link.name}</a>
           </li>
